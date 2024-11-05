@@ -1,0 +1,39 @@
+[
+  {
+    "id": "1",
+    "name": "accent chair",
+    "price": 25,
+    "image": "https://images.pexels.com/photos/943150/pexels-photo-943150.jpeg?auto=compress&cs=tinysrgb&w=1600"
+  },
+  {
+    "id": "2",
+    "name": "albany sectional",
+    "price": 109,
+    "image": "https://images.pexels.com/photos/5705090/pexels-photo-5705090.jpeg?auto=compress&cs=tinysrgb&w=1600"
+  },
+  {
+    "id": "3",
+    "name": "albany table",
+    "price": 309,
+    "image": "https://images.pexels.com/photos/3679601/pexels-photo-3679601.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    "id": "4",
+    "name": "armchair",
+    "price": 125,
+    "image": "https://images.pexels.com/photos/1034584/pexels-photo-1034584.jpeg?auto=compress&cs=tinysrgb&w=1600"
+  },
+  {
+    "id": "5",
+    "name": "bar stool",
+    "price": 40,
+    "image": "https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=1600"
+  },
+  {
+    "id": "6",
+    "name": "dining table",
+    "company": "ikea",
+    "price": 42,
+    "image": "https://images.pexels.com/photos/2029694/pexels-photo-2029694.jpeg?auto=compress&cs=tinysrgb&w=1600"
+  }
+]
