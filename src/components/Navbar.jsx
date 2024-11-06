@@ -8,7 +8,7 @@ import SignOutButton from './SignOutButton';
 import { useAuth0 } from '@auth0/auth0-react';
 
 function Navbar() {
-  const { isLoading } = useAuth0();
+  const { isLoading, isAuthenticated } = useAuth0();
 
   return (
     <AppBar
@@ -26,9 +26,13 @@ function Navbar() {
         <Stack direction='row' spacing={4} sx={{ alignItems: 'center' }}>
           {!isLoading && (
             <>
-              <SignInButton />
-              <CartButton />
-              <SignOutButton />
+              {!isAuthenticated && <SignInButton />}
+              {isAuthenticated && (
+                <>
+                  <CartButton />
+                  <SignOutButton />
+                </>
+              )}
             </>
           )}
         </Stack>

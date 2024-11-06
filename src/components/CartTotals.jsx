@@ -3,7 +3,9 @@ import { formatPrice } from '../utils';
 import { Card, CardContent, Stack, Typography } from '@mui/material';
 
 function CartTotals() {
-  const { cartTotal, tax, orderTotal } = useSelector((state) => state.cart);
+  const cartTotal = useSelector((state) => state.cart.cartTotal);
+  const tax = useSelector((state) => state.cart.tax);
+  const orderTotal = useSelector((state) => state.cart.orderTotal);
 
   return (
     <Card sx={{ width: 350, padding: 2, marginBottom: 2 }}>

@@ -13,27 +13,17 @@ import { useDispatch } from 'react-redux';
 import { formatPrice } from '../utils';
 import SignInButton from './SignInButton';
 import { addItem } from '../features/cart/cartSlice';
+import AddToCartBtn from './AddToCartBtn';
 
 function ProductGrid() {
   const { isAuthenticated } = useAuth0();
   const products = useLoaderData();
-  const dispatch = useDispatch();
 
   return (
     <Grid2 container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
       {products.map((product) => {
         const { id, name, price, image } = product;
-        function addToCart() {
-          const cartProduct = {
-            cartID: product.id + name,
-            productID: product.id,
-            name,
-            price,
-            image,
-            amount: 1,
-          };
-          dispatch(addItem({ product: cartProduct }));
-        }
+
         return (
           <Card key={id} sx={{ width: 365 }}>
             <CardMedia sx={{ height: 140 }} image={image} title={name} />
@@ -52,9 +42,7 @@ function ProductGrid() {
             </CardContent>
             <CardActions>
               {isAuthenticated ? (
-                <Button type='button' size='small' onClick={addToCart}>
-                  Add To Cart
-                </Button>
+                <AddToCartBtn product={product} />
               ) : (
                 <SignInButton text='Please Login' />
               )}

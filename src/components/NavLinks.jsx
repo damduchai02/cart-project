@@ -31,12 +31,15 @@ function NavLinks() {
   const routeMatch = useRouteMatch(patterns);
   const currentTab = routeMatch?.pattern?.path;
 
+  const filteredLinks = links.filter((link) => {
+    if (link.url === 'cart' && !(isLoading + isAuthenticated)) return null;
+    return link;
+  });
+
   return (
     <Tabs value={currentTab}>
-      {links.map((link) => {
+      {filteredLinks.map((link) => {
         const { id, url, text } = link;
-
-        if (url === 'cart' && !(isLoading + isAuthenticated)) return null;
 
         return (
           <Tab

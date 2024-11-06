@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import {
   Button,
   Card,
@@ -18,12 +19,14 @@ function CartItem({ cartItem }) {
   function handleAmount(e) {
     const amount = parseInt(e.target.value);
     if (amount > 0) {
-      dispatch(editItem({ cartID, amount: amount }));
+      dispatch(editItem({ cartID, amount }));
+      toast.success('Cart updated');
     }
   }
 
   function removeItemFromTheCart() {
     dispatch(removeItem({ cartID }));
+    toast.success('Item removed to cart');
   }
 
   return (
